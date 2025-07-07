@@ -41,6 +41,8 @@ body {
     height: 200%;
     background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
     animation: float 6s ease-in-out infinite;
+    transform: translate(var(--mouse-x, 0), var(--mouse-y, 0));
+    transition: transform 0.1s ease-out;
 }
 
 @keyframes float {
@@ -137,11 +139,16 @@ body {
     border-color: #fff;
 }
 
+.experience-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
 .experience-item {
     background: #f8f9fa;
     padding: 30px;
     border-radius: 15px;
-    margin-bottom: 20px;
     position: relative;
     border-left: 4px solid #3498db;
     transition: all 0.3s ease;
@@ -309,7 +316,52 @@ body {
     font-size: 0.9em;
 }
 
+/* Large screens (1200px and up) */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1400px;
+    }
+    
+    .header h1 {
+        font-size: 3.5em;
+    }
+    
+    .main-content {
+        padding: 50px;
+        gap: 50px;
+    }
+    
+    .section h2 {
+        font-size: 2.2em;
+    }
+}
+
+/* Medium screens (768px to 1199px) */
+@media (max-width: 1199px) and (min-width: 768px) {
+    .container {
+        margin: 0 10px;
+    }
+    
+    .main-content {
+        padding: 30px;
+        gap: 30px;
+    }
+    
+    .header {
+        padding: 50px 30px;
+    }
+    
+    .header h1 {
+        font-size: 2.5em;
+    }
+}
+
+/* Tablets (768px and down) */
 @media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
     .main-content {
         grid-template-columns: 1fr;
         gap: 20px;
@@ -323,15 +375,34 @@ body {
     .header h1 {
         font-size: 2em;
     }
+    
+    .contact-info a {
+        margin: 0 8px;
+        padding: 6px 12px;
+        font-size: 0.9em;
+    }
 
     .skills-grid {
         grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
         gap: 10px;
     }
+    
+    .skill-item {
+        padding: 10px 12px;
+        font-size: 0.9em;
+    }
 
     .experience-header {
         flex-direction: column;
         align-items: flex-start;
+    }
+    
+    .experience-item {
+        padding: 20px;
+    }
+    
+    .position {
+        font-size: 1.1em;
     }
 
     .languages {
@@ -340,6 +411,119 @@ body {
 
     .language-item {
         min-width: auto;
+    }
+    
+    .section h2 {
+        font-size: 1.8em;
+    }
+}
+
+/* Mobile phones (480px and down) */
+@media (max-width: 480px) {
+    body {
+        padding: 5px;
+    }
+    
+    .container {
+        border-radius: 15px;
+    }
+    
+    .header {
+        padding: 30px 15px;
+    }
+    
+    .header h1 {
+        font-size: 1.8em;
+    }
+    
+    .contact-info {
+        margin-top: 15px;
+    }
+    
+    .contact-info a {
+        margin: 0 5px;
+        padding: 5px 10px;
+        font-size: 0.8em;
+    }
+    
+    .main-content {
+        padding: 15px;
+        gap: 15px;
+    }
+    
+    .section {
+        margin-bottom: 30px;
+    }
+    
+    .section h2 {
+        font-size: 1.6em;
+        margin-bottom: 15px;
+    }
+    
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+        gap: 8px;
+    }
+    
+    .skill-item {
+        padding: 8px 10px;
+        font-size: 0.8em;
+        border-radius: 20px;
+    }
+    
+    .experience-item {
+        padding: 15px;
+    }
+    
+    .position {
+        font-size: 1em;
+    }
+    
+    .industry, .period {
+        font-size: 0.8em;
+    }
+    
+    .description {
+        font-size: 0.9em;
+        line-height: 1.6;
+    }
+    
+    .description li {
+        padding-left: 15px;
+        margin-bottom: 6px;
+    }
+    
+    .education {
+        padding: 20px;
+    }
+    
+    .education h3 {
+        font-size: 1.2em;
+    }
+    
+    .education p {
+        font-size: 0.9em;
+    }
+}
+
+/* Extra small screens (320px and down) */
+@media (max-width: 320px) {
+    .header h1 {
+        font-size: 1.5em;
+    }
+    
+    .contact-info a {
+        display: block;
+        margin: 5px 0;
+    }
+    
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .skill-item {
+        font-size: 0.75em;
+        padding: 6px 8px;
     }
 }
 
