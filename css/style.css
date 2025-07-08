@@ -55,6 +55,7 @@ body {
     margin-bottom: 10px;
     position: relative;
     z-index: 1;
+    color: #fff;
 }
 
 .header .subtitle {
@@ -544,3 +545,35 @@ body {
 .section:nth-child(2) { animation-delay: 0.2s; }
 .section:nth-child(3) { animation-delay: 0.3s; }
 .section:nth-child(4) { animation-delay: 0.4s; } 
+
+.contact-info a {
+    background: #2c3e50;
+    color: #fff;
+}
+
+.company-name, .industry, .period, .language-level {
+    color: #333;
+}
+
+.skill-item {
+    color: #222;
+    background: #e0e0e0;
+}
+
+.experience-item, .education, .language-item {
+    background: #fff;
+    color: #222;
+}
+
+.section h2 {
+    color: #111;
+}
+
+.description {
+    color: #222;
+}
+
+.reveal-btn {
+    background: #2c3e50;
+    color: #fff;
+} 
