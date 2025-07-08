@@ -4,8 +4,8 @@ document.addEventListener('DOMContentLoaded', function() {
         section.style.animationDelay = `${index * 0.1}s`;
     });
 
-    var modal = document.getElementById('modal-overlay');
-    var closeBtn = document.getElementById('modal-close-btn');
+    const modal = document.getElementById('modal-overlay');
+    const closeBtn = document.getElementById('modal-close-btn');
     if (modal && closeBtn) {
         modal.style.display = 'flex';
         closeBtn.addEventListener('click', function() {
