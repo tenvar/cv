@@ -120,6 +120,8 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     gap: 12px;
+    justify-items: center;
+    align-items: center;
 }
 
 .skill-item {
@@ -131,6 +133,16 @@ body {
     font-size: 0.9em;
     transition: all 0.3s ease;
     border: 2px solid transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    min-height: 48px;
+    max-height: 48px;
+    overflow: hidden;
+    width: 120px;
+    min-width: 120px;
+    max-width: 120px;
 }
 
 .skill-item:hover {
