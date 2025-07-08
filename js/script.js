@@ -12,18 +12,27 @@ document.addEventListener('DOMContentLoaded', function() {
             modal.style.display = 'none';
         });
     }
-});
 
-document.addEventListener('mousemove', function(e) {
     const header = document.querySelector('.header');
-    const rect = header.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    
-    if (x >= 0 && x <= rect.width && y >= 0 && y <= rect.height) {
-        const moveX = (x / rect.width - 0.5) * 30;
-        const moveY = (y / rect.height - 0.5) * 30;
+    let headerRect = header ? header.getBoundingClientRect() : null;
+    let mouseX = 0, mouseY = 0, rafId = null;
+
+    function updateHeaderGradient() {
+        if (!headerRect) return;
+        const moveX = (mouseX / headerRect.width - 0.5) * 30;
+        const moveY = (mouseY / headerRect.height - 0.5) * 30;
         header.style.setProperty('--mouse-x', moveX + 'px');
         header.style.setProperty('--mouse-y', moveY + 'px');
+        rafId = null;
     }
+
+    document.addEventListener('mousemove', function(e) {
+        if (!headerRect) return;
+        mouseX = e.clientX - headerRect.left;
+        mouseY = e.clientY - headerRect.top;
+        if (!rafId) rafId = requestAnimationFrame(updateHeaderGradient);
+    });
+    window.addEventListener('resize', function() {
+        if (header) headerRect = header.getBoundingClientRect();
+    });
 }); 

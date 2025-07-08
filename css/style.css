@@ -88,6 +88,7 @@ body {
 }
 
 .main-content {
+    min-height: 600px;
     padding: 30px;
     display: flex;
     flex-direction: column;
