@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://r4m6m3y336n.github.io/cv/sitemap.xml 
