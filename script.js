@@ -3,6 +3,15 @@ document.addEventListener('DOMContentLoaded', function() {
     sections.forEach((section, index) => {
         section.style.animationDelay = `${index * 0.1}s`;
     });
+
+    var modal = document.getElementById('modal-overlay');
+    var closeBtn = document.getElementById('modal-close-btn');
+    if (modal && closeBtn) {
+        modal.style.display = 'flex';
+        closeBtn.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+    }
 });
 
 document.addEventListener('mousemove', function(e) {
